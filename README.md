@@ -26,3 +26,4 @@ Then run `bundle install`.
 **2. Create a new blog from the New Page dropdown.**
 
 **3. Copy the templates from `app/templates/blog` to your theme templates folder to customize.**
+

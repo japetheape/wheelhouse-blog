@@ -12,6 +12,9 @@ class Blog::Post < Wheelhouse::Resource
   property :year, Integer
   property :month, Integer
   
+  property :post_image, Wheelhouse::Image
+
+
   property :tags, Wheelhouse::Tags
   property :categories, Wheelhouse::Tags
 

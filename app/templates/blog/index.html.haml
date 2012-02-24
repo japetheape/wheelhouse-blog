@@ -7,5 +7,7 @@
 - @blog.posts.each do |post|
   .post
     %h4= link_to post.title, post
+    - if post.post_image.filename?
+      = image post.post_image.thumbnail
     = post.content
     

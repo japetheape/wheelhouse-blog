@@ -6,7 +6,10 @@
 - tab :post do
   = field :title do
     = form.text_field :title, :title => true
-    
+  
+
+  = field :post_image do
+    = form.image :post_image
   = content
   
 - sidebar(:options) do

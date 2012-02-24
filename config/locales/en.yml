@@ -7,9 +7,10 @@ en:
     label:
       blog:
         title: Blog Title
-      
+        
       post:
         title: Post Title
+        post_image: Post Image
         content: Post Content
         tags_string: Tags
         published_at: Publish Date
