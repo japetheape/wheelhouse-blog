@@ -1,5 +1,6 @@
 class Blog::BlogHandler < Wheelhouse::ResourceHandler
   get :cache => true do
+    I18n.locale = :nl
     # Nothing extra required
   end
 
