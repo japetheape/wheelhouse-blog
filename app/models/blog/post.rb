@@ -33,7 +33,8 @@ class Blog::Post < Wheelhouse::Resource
   scope :tagged_with, lambda { |tag| where(:_tags => tag) }
   scope :in_category, lambda { |category| where(:_categories => category) }
   scope :in_year_and_month, lambda { |year, month| where(:year => year, :month => month) }
-  
+  scope :by_author, lambda { |author| where(:author_name => author) }
+
   scope :properties_for_admin, select(:id, :type, :title, :state, :published_at, :created_by_id, :author_name, :blog_id)
   
   before_save :set_published_timestamp, :if => :published?

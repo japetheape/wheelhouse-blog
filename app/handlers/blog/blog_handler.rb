@@ -2,6 +2,7 @@ class Blog::BlogHandler < Wheelhouse::ResourceHandler
   get :cache => true do
     I18n.locale = :nl
     # Nothing extra required
+    @posts = @blog.posts
   end
 
   get "/feed.xml", :cache => true do
@@ -9,6 +10,12 @@ class Blog::BlogHandler < Wheelhouse::ResourceHandler
     render :template => "feed.xml", :layout => false
   end
   
+  get '/author/:author', :cache => true do
+    @posts = @blog.posts.by_author(params[:author])
+
+    render :template => "index.html"
+  end
+
   get '/tag/:tag', :cache => true do
     @posts = @blog.posts.tagged_with(params[:tag])
     render :template => "tag.html"
